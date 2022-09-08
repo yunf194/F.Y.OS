@@ -7,7 +7,7 @@
 #include "demo2.h"
 
 #define BUFF_SIZE     64
-#define PROMPT        "F.Y.OS >> "
+#define PROMPT        "D.T.OS >> "
 #define KEY_ENTER     0x0D
 #define KEY_BACKSPACE 0x08
 
@@ -50,7 +50,7 @@ static void Mem()
     }
     
     SetPrintPos(CMD_START_W, CMD_START_H + 1);
-    PrintString("Physical Memory: ");
+    PrintString("Pysical Memory: ");
     PrintIntDec(ms);
     PrintString(" MB\n");
 }

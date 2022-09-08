@@ -5,11 +5,14 @@
 #include "mutex.h"
 #include "keyboard.h"
 
+extern int gMemSize;
+
 void KMain()
 {
     void (*AppModInit)() = (void*)BaseOfApp;
+    byte* pn = (byte*)0x475;
     
-    PrintString("F.Y.OS\n");
+    PrintString("D.T.OS\n");
     
     PrintString("GDT Entry: ");
     PrintIntHex((uint)gGdtInfo.entry);
@@ -27,19 +30,25 @@ void KMain()
     PrintIntDec((uint)gIdtInfo.size);
     PrintChar('\n');
     
+    PrintString("Number of Hard Disk: ");
+    PrintIntDec(*pn);
+    PrintChar('\n');
+    
     MemModInit((byte*)KernelHeapBase, HeapSize);
     
     KeyboardModInit();
     
     MutexModInit();
     
-    AppModInit();
+    // AppModInit();
     
     TaskModInit();
     
     IntModInit();
     
     ConfigPageTable();
+    
+    while(1);
     
     LaunchTask();
     

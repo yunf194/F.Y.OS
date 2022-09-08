@@ -14,7 +14,8 @@ KERNEL_SRC := kmain.c      \
               mutex.c      \
               keyboard.c   \
               event.c      \
-              sysinfo.c
+              sysinfo.c    \
+              hdraw.c
               
 APP_SRC :=    screen.c     \
               utility.c    \
@@ -29,7 +30,7 @@ APP_SRC :=    screen.c     \
 
 KERNEL_ADDR := B000
 APP_ADDR := F000
-IMG := F.Y.OS
+IMG := D.T.OS
 IMG_PATH := /mnt/hgfs
 
 DIR_DEPS := deps
@@ -69,7 +70,7 @@ APP_DEPS := $(APP_SRC:.c=.dep)
 APP_DEPS := $(addprefix $(DIR_DEPS)/, $(APP_DEPS))
 
 all : $(DIR_OBJS) $(DIR_EXES) $(IMG) $(BOOT_OUT) $(LOADER_OUT) $(KERNEL_OUT) $(APP_OUT)
-	@echo "Build Success ==> F.Y.OS!"
+	@echo "Build Success ==> D.T.OS!"
 	
 ifeq ("$(MAKECMDGOALS)", "all")
 -include $(KERNEL_DEPS)

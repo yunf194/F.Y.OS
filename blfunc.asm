@@ -3,7 +3,7 @@ jmp short _start
 nop
 
 header:
-    BS_OEMName     db "F.Y.Soft"
+    BS_OEMName     db "D.T.Soft"
     BPB_BytsPerSec dw 512
     BPB_SecPerClus db 1
     BPB_RsvdSecCnt dw 1
@@ -20,7 +20,7 @@ header:
     BS_Reserved1   db 0
     BS_BootSig     db 0x29
     BS_VolID       dd 0
-    BS_VolLab      db "F.Y.OS-0.01"
+    BS_VolLab      db "D.T.OS-0.01"
     BS_FileSysType db "FAT12   "
     
 const:
